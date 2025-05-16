@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>My Borrowed Books</title></head>
+<body>
+  <h2>My Borrowed Books</h2>
+  <table border="1">
+    <tr><th>Title</th><th>Borrow Date</th><th>Due Date</th><th>Returned</th></tr>
+    {% for book in books %}
+    <tr>
+      <td>{{ book[0] }}</td>
+      <td>{{ book[1] }}</td>
+      <td>{{ book[2] }}</td>
+      <td>{{ 'Yes' if book[3] else 'No' }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <p><a href="/student/dashboard">Back to Dashboard</a></p>
+  <p><a href="/logout">Logout</a></p>
+</body>
+</html>

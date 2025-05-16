@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><title>Admin Dashboard</title></head>
+<body>
+  <h2>Admin Dashboard</h2>
+  <h3>Add Book</h3>
+  <form method="POST" action="/admin/add_book">
+    Title: <input name="title"><br>
+    Author: <input name="author"><br>
+    ISBN: <input name="isbn"><br>
+    Category: <input name="category"><br>
+    Copies: <input type="number" name="copies"><br>
+    <button type="submit">Add Book</button>
+  </form>
+
+  <h3>Book List</h3>
+  <table border="1">
+    <tr><th>Title</th><th>Author</th><th>ISBN</th><th>Category</th><th>Total</th><th>Available</th></tr>
+    {% for book in books %}
+    <tr>
+      <td>{{ book[1] }}</td>
+      <td>{{ book[2] }}</td>
+      <td>{{ book[3] }}</td>
+      <td>{{ book[4] }}</td>
+      <td>{{ book[5] }}</td>
+      <td>{{ book[6] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <p><a href="/logout">Logout</a></p>
+</body>
+</html>

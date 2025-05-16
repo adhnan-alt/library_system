@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Student Dashboard</title></head>
+<body>
+  <h2>Welcome, Student</h2>
+  <h3>Available Books</h3>
+  <table border="1">
+    <tr><th>Title</th><th>Author</th><th>Category</th><th>Action</th></tr>
+    {% for book in books %}
+    <tr>
+      <td>{{ book[1] }}</td>
+      <td>{{ book[2] }}</td>
+      <td>{{ book[4] }}</td>
+      <td><a href="/borrow/{{ book[0] }}">Borrow</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+  <p><a href="/mybooks">My Borrowed Books</a></p>
+  <p><a href="/logout">Logout</a></p>
+</body>
+</html>
